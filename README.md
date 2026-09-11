@@ -199,32 +199,32 @@ non-reproducible.
 
 **Validation plan for the nickname map:**
 
-Hold out 20% of labelled pairs that contain at least one nickname
+- Hold out 20% of labelled pairs that contain at least one nickname
 variant. Measure precision/recall before and after adding mappings.
 
-Reject any mapping that lowers precision on the hard-negative set,
+- Reject any mapping that lowers precision on the hard-negative set,
 even if it raises recall. In identity verification, a nickname map
 that produces false positives is worse than no map.
 
-Log every mapping used in a decision (explain() should report
+- Log every mapping used in a decision (explain() should report
 aliases_applied) so operations can audit individual cases.
 
-Future improvements
-Nickname/alias dictionary for common Indian variants (see Tier 1–3 above).
+**Future improvements**
+- Nickname/alias dictionary for common Indian variants (see Tier 1–3 above).
 
-Transliteration support for regional scripts (see approach above).
+- Transliteration support for regional scripts (see approach above).
 
-Learn feature weights from labeled pairs using logistic regression,
+- Learn feature weights from labeled pairs using logistic regression,
 once Digio has enough decision history to fit one.
 
-Per-document-type threshold calibration: PAN, Aadhaar, Passport,
+- Per-document-type threshold calibration: PAN, Aadhaar, Passport,
 Voter ID, and utility bills have different error profiles, so a single
 global threshold is a compromise.
 
-Use DOB / address / gender / document number when available. Name
+- Use DOB / address / gender / document number when available. Name
 matching alone has a ceiling; a joint model over multiple fields
 would push precision higher.
 
-Calibrate the REVIEW band by business cost: measure the human review
+- Calibrate the REVIEW band by business cost: measure the human review
 throughput and adjust REVIEW_THRESHOLD so that the review queue
 stays within operational capacity.
