@@ -1,6 +1,5 @@
 # Digio-labs-assesment
 
-%%writefile NOTES.md
 # NOTES
 
 ## What I built
